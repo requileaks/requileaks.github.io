@@ -1,0 +1,65 @@
+.messages .content, .messages pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+.messages {
+	border-collapse: collapse;
+}
+.messages .author {
+	margin-bottom: 1em;
+}
+.messages .author .name {
+	font-weight: bold;
+}
+.messages .edited {
+	color: grey;
+}
+.messages td {
+	vertical-align: top;
+	border-bottom: 1px solid grey;
+	border-top: 1px solid grey;
+	padding: 1em;
+}
+.messages .reaction {
+	border: 1px solid grey;
+	padding: 0.3em;
+	display: inline-block;
+}
+.messages .reaction img {
+	max-width: 15px;
+	max-height: 15px;
+}
+.messages .avatar {
+	width: 48px;
+	height: 48px;
+}
+.messages .id {
+	color: grey;
+	float: right;
+}
+.messages .u {
+	text-decoration: underline;
+}
+.messages .i {
+	font-style: italic;
+}
+.messages .b {
+	font-weight: bold;
+}
+.messages .s {
+	text-decoration: line-through;
+}
+.messages .t {
+	font-family: 'Lucida Console', monospace;
+	background-color: #ccc;
+	border: 1px solid black;
+}
+.messages pre {
+	background-color: #ccc;
+	border: 1px solid black;
+}
+img.emoji {
+	width: 1.5em;
+	height: 1.5em;
+}
