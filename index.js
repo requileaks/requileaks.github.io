@@ -81,6 +81,21 @@ const performSearch = (e) => {
 	return false;
 }
 
+const drawChart = () => {
+	let data = google.visualization.arrayToDataTable(stats);
+	let options = {
+		title: 'Server Activity',
+		legend: { position: 'bottom' },
+series: {
+          // Gives each series an axis name that matches the Y-axis below.
+	0: {targetAxisIndex: 0},
+          1: {targetAxisIndex: 1}
+        
+	}}
+	let chart = new google.visualization.LineChart(document.querySelector("#chart"));
+	chart.draw(data, options);
+}
+
 window.addEventListener("load", () => {
 	let h = `<ul>`;
 	let chans = Object.values(channels);
@@ -103,5 +118,10 @@ window.addEventListener("load", () => {
 	if(search) {
 		document.querySelector("#search").style.display = "block";
 		document.querySelector("#search form").addEventListener("submit", performSearch);
+	}
+
+	if(stats) {
+		google.charts.load('current', {packages: ['corechart', 'line']});
+		google.charts.setOnLoadCallback(drawChart);
 	}
 });
